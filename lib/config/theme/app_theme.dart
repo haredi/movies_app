@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/config/theme/app_style.dart';
 import 'package:movie_app/core/utils/colors_manager.dart';
 
 class AppTheme {
@@ -6,14 +7,15 @@ class AppTheme {
     scaffoldBackgroundColor: ColorsManager.scaffoldBg,
 
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedLabelStyle: AppStyle.headerSmallText,
       backgroundColor: ColorsManager.navBarBackground,
       elevation: 20,
       unselectedItemColor: ColorsManager.bottomNav,
       selectedItemColor: ColorsManager.yellow,
       showSelectedLabels: true,
       showUnselectedLabels: true,
-      selectedIconTheme: const IconThemeData(size: 40 ),
-      unselectedIconTheme: const IconThemeData(size: 30)
-    )
+
+
+    ),
   );
 }

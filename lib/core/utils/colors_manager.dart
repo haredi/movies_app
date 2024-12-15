@@ -7,10 +7,10 @@ class ColorsManager {
   static Color yellow = const Color(0xFFF7B539);
   static Color white = const Color(0xFFFFFFFF);
   static Color smallTitle = const Color(0xFFB5B4B4);
-
-
   static const Color iconBg=Color(0xFF514F4F);
   static const Color newRelease=Color(0xFF3A3A3A);
   static const Color card=Color(0xFF343534);
   static const Color container=Color(0xFF282A28);
+  static const Color details=Color(0xFFCBCBCB);
+  static const Color divider=Color(0xFF707070);
 }

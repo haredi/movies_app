@@ -4,7 +4,6 @@ import 'package:movie_app/config/theme/app_style.dart';
 import 'package:movie_app/presentation/screen/home/tabs/home_tab/widgets/header_item.dart';
 import 'package:movie_app/presentation/screen/home/tabs/home_tab/widgets/new_releases_list.dart';
 import 'package:movie_app/presentation/screen/home/tabs/home_tab/widgets/recomended_list.dart';
-
 import '../../../../../core/utils/colors_manager.dart';
 
 class HomeTab extends StatelessWidget {
@@ -17,7 +16,7 @@ class HomeTab extends StatelessWidget {
         SizedBox(
             height: 300.h,
             child: HeaderItem()),
-        SizedBox(height: 20.h),
+        SizedBox(height: 10.h),
         Container(
           height: 195.h,
           padding: REdgeInsets.symmetric(vertical: 12),
@@ -32,10 +31,9 @@ class HomeTab extends StatelessWidget {
                   style: AppStyle.titleList
                 ),
               ),
-              SizedBox(height: 12.h),
-
+              SizedBox(height: 3.h),
               SizedBox(
-                height: 135.h,
+                height: 130.h,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
@@ -45,12 +43,12 @@ class HomeTab extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 30.h),
+        SizedBox(height: 10.h),
         Container(
-          height: 255.h,
+          height: 270.h,
           padding: REdgeInsets.symmetric(vertical: 10),
           color: ColorsManager.container,
-          child: Column(
+          child:    Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -67,13 +65,13 @@ class HomeTab extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return SizedBox(
                             width: 105.w,
-                            height: 186.h,
+                            height: 210.h,
                             child: RecomendedList());
                       }),
                 ),
               ]),
         ),
-        SizedBox(height: 12.h),
+        SizedBox(height: 5.h),
 
       ],
     );

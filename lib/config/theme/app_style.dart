@@ -12,5 +12,6 @@ class AppStyle{
   static TextStyle largeTitleItem=GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 10.sp,color: ColorsManager.white,);
   static TextStyle titleList=GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 15.sp,color: ColorsManager.white);
   static TextStyle titleAppbar=GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 20.sp,color: ColorsManager.white);
+  static TextStyle textDetails=GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 13.sp,color: ColorsManager.details);
 
 }

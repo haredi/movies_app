@@ -10,11 +10,9 @@ import '../../../../../../core/utils/colors_manager.dart';
 
 class HeaderItem extends StatefulWidget {
   HeaderItem({super.key});
-
   @override
   State<HeaderItem> createState() => _HeaderItemState();
 }
-
 class _HeaderItemState extends State<HeaderItem> {
   bool isSaved = false;
 
@@ -24,7 +22,7 @@ class _HeaderItemState extends State<HeaderItem> {
       options: CarouselOptions(
         enlargeCenterPage: true,
         viewportFraction: .9,
-        height: 300.h,
+        height: 390.h,
         autoPlay: true,
         aspectRatio:16/9 ,
         autoPlayAnimationDuration: Duration(seconds: 2)
@@ -43,7 +41,6 @@ class _HeaderItemState extends State<HeaderItem> {
                    child: InkWell(
                      onTap: () {
                        Navigator.pushNamed(context, RoutesManager.homeDetails);
-
                      },
                      child: Image.asset(
                        'assets/images/movie_img.png',
