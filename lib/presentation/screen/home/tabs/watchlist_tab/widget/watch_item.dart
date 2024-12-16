@@ -6,14 +6,11 @@ import 'package:movie_app/core/utils/assets_manager.dart';
 
 class WatchItem extends StatefulWidget {
   const WatchItem({super.key});
-
   @override
   State<WatchItem> createState() => _WatchItemState();
 }
-
 class _WatchItemState extends State<WatchItem> {
   // bool isSaved=false;
-
   @override
   Widget build(BuildContext context) {
     return Padding(

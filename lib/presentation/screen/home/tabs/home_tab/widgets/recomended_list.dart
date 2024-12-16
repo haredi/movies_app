@@ -54,7 +54,7 @@ class _RecomendedListState extends State<RecomendedList> {
                 Row(children: [
                   Icon(Icons.star,size: 15,color: ColorsManager.yellow,),
                   Text('7.7',
-                    style: AppStyle.rateOfItem)
+                    style: AppStyle.rateOfItem),
                 ],),
                 Text('Deadpool 2',
                     style: AppStyle.largeTitleItem),
