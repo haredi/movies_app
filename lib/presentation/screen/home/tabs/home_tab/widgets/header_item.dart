@@ -1,21 +1,26 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/core/utils/assets_manager.dart';
 import 'package:movie_app/core/utils/routes_manager.dart';
+import 'package:movie_app/data/model/results.dart';
 
 import '../../../../../../config/theme/app_style.dart';
 import '../../../../../../core/utils/colors_manager.dart';
+import '../../../../../../data/api_manager/end_points.dart';
+import '../../../../../../domain/entities/popular_entity.dart';
 
-class HeaderItem extends StatefulWidget {
-  HeaderItem({super.key});
+class PopularItem extends StatefulWidget {
+  PopularItem({super.key,required this.popularList});
+List<PopularEntity> popularList;
 
   @override
-  State<HeaderItem> createState() => _HeaderItemState();
+  State<PopularItem> createState() => _PopularItemState();
 }
 
-class _HeaderItemState extends State<HeaderItem> {
+class _PopularItemState extends State<PopularItem> {
   bool isSaved = false;
 
   @override
@@ -27,12 +32,11 @@ class _HeaderItemState extends State<HeaderItem> {
         height: 300.h,
         autoPlay: true,
         aspectRatio:16/9 ,
-        autoPlayAnimationDuration: Duration(seconds: 2)
+        autoPlayAnimationDuration: Duration(seconds: 1)
       ),
       itemCount: 10,
       itemBuilder:(context, index, realIndex) {
         return  Stack(
-
            alignment: Alignment.bottomLeft,
            children: [
              Column(
@@ -42,12 +46,15 @@ class _HeaderItemState extends State<HeaderItem> {
                    flex: 3,
                    child: InkWell(
                      onTap: () {
-                       Navigator.pushNamed(context, RoutesManager.homeDetails);
+                       Navigator.pushNamed(context, RoutesManager.homeDetails,arguments: widget.popularList[index]);
 
                      },
-                     child: Image.asset(
-                       'assets/images/movie_img.png',
-                       fit: BoxFit.cover,
+                     child:
+                     CachedNetworkImage(
+                       fit: BoxFit.fill,
+                       imageUrl: '${EndPoints.imgBaseUrl}${widget.popularList[index].backdropPath}'??'',
+                       placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                       errorWidget: (context, url, error) => Icon(Icons.error),
                      ),
                    ),
                  ),
@@ -62,7 +69,11 @@ class _HeaderItemState extends State<HeaderItem> {
                right: 225,
                child: Stack(
                  children: [
-                   Image.asset('assets/images/movie_img.png'),
+                   CachedNetworkImage(
+                     imageUrl: '${EndPoints.imgBaseUrl}${widget.popularList[index].posterPath}'??'https://images.app.goo.gl/eX4NLkmi7tD4gAHQA',
+                     placeholder: (context, url) => CircularProgressIndicator(),
+                     errorWidget: (context, url, error) => Icon(Icons.error),
+                   ),
                    InkWell(
                      onTap: () {
                        if (isSaved) {
@@ -86,14 +97,14 @@ class _HeaderItemState extends State<HeaderItem> {
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
                    Text(
-                     'Dora and the lost city of gold',
+                     widget.popularList[index].title??'',
                      style: AppStyle.headerLargeText,
                    ),
                    SizedBox(
                      height: 7.h,
                    ),
                    Text(
-                     '2019  PG-13  2h 7m',
+                     widget.popularList[index].releaseDate??"",
                      style: AppStyle.headerSmallText,
                    )
                  ],

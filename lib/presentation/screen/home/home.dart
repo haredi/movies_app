@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/assets_manager.dart';
 import 'package:movie_app/presentation/screen/home/tabs/browser_tab/browser_tab.dart';
-import 'package:movie_app/presentation/screen/home/tabs/home_tab/home_tab.dart';
+import 'package:movie_app/presentation/screen/home/tabs/home_tab/view/home_tab.dart';
 import 'package:movie_app/presentation/screen/home/tabs/search_tab/search_tab.dart';
 import 'package:movie_app/presentation/screen/home/tabs/watchlist_tab/watchlist_tab.dart';
 

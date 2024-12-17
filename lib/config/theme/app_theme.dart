@@ -12,8 +12,8 @@ class AppTheme {
       selectedItemColor: ColorsManager.yellow,
       showSelectedLabels: true,
       showUnselectedLabels: true,
-      selectedIconTheme: const IconThemeData(size: 40 ),
-      unselectedIconTheme: const IconThemeData(size: 30)
+      selectedIconTheme: const IconThemeData(size: 35 ),
+      // unselectedIconTheme: const IconThemeData(size: 30)
     )
   );
 }
