@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 List<Widget>tabs=[
   HomeTab(),
-  SearchTab(),
+  const SearchTab(),
   BrowserTab(),
   WatchlistTab()
 ];

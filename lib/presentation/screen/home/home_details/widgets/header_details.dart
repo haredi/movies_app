@@ -11,7 +11,6 @@ class HeaderDetails extends StatefulWidget {
   @override
   State<HeaderDetails> createState() => _HeaderDetailsState();
 }
-
 class _HeaderDetailsState extends State<HeaderDetails> {
   bool isSaved = false;
 
