@@ -31,9 +31,15 @@ class MovieDetails {
       this.title, 
       this.video, 
       this.voteAverage, 
-      this.voteCount,});
+      this.voteCount,
+  this.statusMessage,
+  this.statusCode,
+  this.success});
 
   MovieDetails.fromJson(dynamic json) {
+    statusCode = json['status_code'];
+    statusMessage = json['status_message'];
+    success = json['success'];
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
     belongsToCollection = json['belongs_to_collection'] != null ? BelongsToCollection.fromJson(json['belongs_to_collection']) : null;
@@ -107,6 +113,9 @@ class MovieDetails {
   bool? video;
   num? voteAverage;
   num? voteCount;
+  num? statusCode;
+  String? statusMessage;
+  bool? success;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

@@ -20,7 +20,9 @@ class RoutesManager{
         }
       case homeDetails:
         {
-          return MaterialPageRoute(builder: (context)=>const HomeDetails());
+          return MaterialPageRoute(
+            settings: settings,
+              builder: (context)=> HomeDetails());
         }
 
     }

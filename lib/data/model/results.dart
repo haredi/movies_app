@@ -1,21 +1,24 @@
 import 'package:movie_app/domain/entities/popular_entity.dart';
+import 'package:movie_app/domain/entities/toprate_entity.dart';
+import 'package:movie_app/domain/entities/upcoming_entity.dart';
 
 class Results {
   Results({
-      this.adult, 
-      this.backdropPath, 
-      this.genreIds, 
-      this.id, 
-      this.originalLanguage, 
-      this.originalTitle, 
-      this.overview, 
-      this.popularity, 
-      this.posterPath, 
-      this.releaseDate, 
-      this.title, 
-      this.video, 
-      this.voteAverage, 
-      this.voteCount,});
+    this.adult,
+    this.backdropPath,
+    this.genreIds,
+    this.id,
+    this.originalLanguage,
+    this.originalTitle,
+    this.overview,
+    this.popularity,
+    this.posterPath,
+    this.releaseDate,
+    this.title,
+    this.video,
+    this.voteAverage,
+    this.voteCount,
+  });
 
   Results.fromJson(dynamic json) {
     adult = json['adult'];
@@ -42,7 +45,7 @@ class Results {
   String? overview;
   num? popularity;
   String? posterPath; //
-  String? releaseDate;//
+  String? releaseDate; //
   String? title; //
   bool? video; //
   num? voteAverage;
@@ -67,8 +70,25 @@ class Results {
     return map;
   }
 
-  PopularEntity toPopularEntity(){
-return  PopularEntity(title: title, backdropPath: backdropPath, posterPath: posterPath,releaseDate: releaseDate,video: video);
+  PopularEntity toPopularEntity() {
+    return PopularEntity(
+        title: title,
+        backdropPath: backdropPath,
+        posterPath: posterPath,
+        releaseDate: releaseDate,
+        video: video);
   }
 
+  UpcomingEntity toUpcomingEntity() {
+    return UpcomingEntity(posterPath: posterPath);
+  }
+
+  TopRateEntity toTopRateEntity() {
+    return TopRateEntity(
+      posterPath: posterPath,
+      releaseDate: releaseDate,
+      title: title,
+      voteAverage: voteAverage,
+    );
+  }
 }

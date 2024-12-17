@@ -1,7 +1,7 @@
-import 'results.dart';
+import '../results.dart';
 
-class MovieResponse {
-  MovieResponse({
+class PopularResponse {
+  PopularResponse({
       this.page, 
       this.results, 
       this.totalPages, 
@@ -10,7 +10,7 @@ class MovieResponse {
   this.statusMessage,
   this.success});
 
-  MovieResponse.fromJson(dynamic json) {
+  PopularResponse.fromJson(dynamic json) {
     page = json['page'];
     statusCode = json['status_code'];
     statusMessage = json['status_message'];
